@@ -46,7 +46,7 @@
             >;
         };
 
-        prog-dvorak {
+        real-prog-dvorak {
             bindings = <
 &kp PIPE   &kp PLUS  &kp LBKT   &kp LBRC  &kp LPAR   &kp AMPS  &trans                                                   &none      &kp EQUAL  &kp RPAR  &kp RBRC  &kp RBKT  &kp STAR  &kp EXCL
 &kp TAB    &kp SEMI  &kp COMMA  &kp DOT   &kp P      &kp Y     &to 0                                                    &trans     &kp F      &kp G     &kp C     &kp R     &kp L     &kp BSLH
