@@ -172,7 +172,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        default-qwerty {
             bindings = <
 &kp EQUAL  &kp N1     &kp N2    &kp N3          &kp N4           &kp N5  &none                                                          &none      &kp N6  &kp N7        &kp N8          &kp N9            &kp N0             &kp MINUS
 &kp TAB    &kp Q      &kp W     &kp E           &kp R            &kp T   &none                                                          &none      &kp Y   &kp U         &kp I           &kp O             &kp P              &kp BSLH
@@ -182,7 +182,7 @@
             >;
         };
 
-        prime_layer {
+        real-prog-dvorak {
             bindings = <
 &gpipe     &pkp_n1   &lkp_n2    &lkp_n3         &lkp_n4          &akp_n5  &none                                                          &none      &ekp_n6  &rkp_n7       &rkp_n8         &rkp_n9    &skp_n0  &eprcnt
 &kp TAB    &kp SEMI  &kp COMMA  &kp DOT         &kp P            &kp Y    &to 0                                                          &none      &kp F    &kp G         &kp C           &kp R      &kp L    &bhash
