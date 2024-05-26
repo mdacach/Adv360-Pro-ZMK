@@ -33,6 +33,15 @@
             mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
         };
 
+        tpipe: tilde_pipe {
+            compatible = "zmk,behavior-mod-morph";
+            label = "tilde_pipe";
+            #binding-cells = <0>;
+            bindings = <&kp TILDE>, <&kp PIPE>;
+
+            mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
+        };
+
         pkp_n1: plus_kp_n1 {
             compatible = "zmk,behavior-mod-morph";
             label = "plus_kp_n1";
@@ -184,7 +193,7 @@
 
         real-prog-dvorak {
             bindings = <
-&gpipe     &pkp_n1   &lkp_n2    &lkp_n3         &lkp_n4          &akp_n5  &none                                                          &none      &ekp_n6  &rkp_n7       &rkp_n8         &rkp_n9    &skp_n0  &eprcnt
+&tpipe     &pkp_n1   &lkp_n2    &lkp_n3         &lkp_n4          &akp_n5  &none                                                          &none      &ekp_n6  &rkp_n7       &rkp_n8         &rkp_n9    &skp_n0  &eprcnt
 &kp TAB    &kp SEMI  &kp COMMA  &kp DOT         &kp P            &kp Y    &to 0                                                          &none      &kp F    &kp G         &kp C           &kp R      &kp L    &bhash
 &kp ESC    &kp A     &kp O      &kp E           &kp U            &kp I    &none          &kp LCTRL   &kp LALT      &kp LGUI   &kp RCTRL  &none      &kp D    &kp H         &kp T           &kp N      &kp S    &kp MINUS
 &kp LSHFT  &kp APOS  &kp Q      &kp J           &kp K            &kp X                               &kp HOME      &kp PG_UP                        &kp B    &kp M         &kp W           &kp V      &kp Z    &kp RSHFT
