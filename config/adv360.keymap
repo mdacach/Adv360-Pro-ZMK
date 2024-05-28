@@ -150,6 +150,15 @@
             mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
         };
 
+        dtilde: dllr_tilde {
+            compatible = "zmk,behavior-mod-morph";
+            label = "dllr_tilde";
+            #binding-cells = <0>;
+            bindings = <&kp DLLR>, <&kp TILDE>;
+
+            mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
+        };
+
         ggrave: grave_grave {
             compatible = "zmk,behavior-mod-morph";
             label = "grave_grave";
@@ -193,11 +202,11 @@
 
         real-prog-dvorak {
             bindings = <
-&tpipe     &pkp_n1   &lkp_n2    &lkp_n3         &lkp_n4          &akp_n5  &none                                                          &none      &ekp_n6  &rkp_n7       &rkp_n8         &rkp_n9    &skp_n0  &eprcnt
+&gpipe     &pkp_n1   &lkp_n2    &lkp_n3         &lkp_n4          &akp_n5  &none                                                          &none      &ekp_n6  &rkp_n7       &rkp_n8         &rkp_n9    &skp_n0  &eprcnt
 &kp TAB    &kp SEMI  &kp COMMA  &kp DOT         &kp P            &kp Y    &to 0                                                          &none      &kp F    &kp G         &kp C           &kp R      &kp L    &bhash
 &kp ESC    &kp A     &kp O      &kp E           &kp U            &kp I    &none          &kp LCTRL   &kp LALT      &kp LGUI   &kp RCTRL  &none      &kp D    &kp H         &kp T           &kp N      &kp S    &kp MINUS
 &kp LSHFT  &kp APOS  &kp Q      &kp J           &kp K            &kp X                               &kp HOME      &kp PG_UP                        &kp B    &kp M         &kp W           &kp V      &kp Z    &kp RSHFT
-&none      &dgrave   &kp CAPS   &kp LEFT_ARROW  &kp RIGHT_ARROW           &kp BACKSPACE  &kp DELETE  &kp END       &kp PG_DN  &kp ENTER  &kp SPACE           &kp UP_ARROW  &kp DOWN_ARROW  &kp SLASH  &acaret  &none
+&none      &dtilde   &kp CAPS   &kp LEFT_ARROW  &kp RIGHT_ARROW           &kp BACKSPACE  &kp DELETE  &kp END       &kp PG_DN  &kp ENTER  &kp SPACE           &kp UP_ARROW  &kp DOWN_ARROW  &kp SLASH  &acaret  &none
             >;
         };
     };
