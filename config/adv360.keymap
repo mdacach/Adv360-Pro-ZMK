@@ -5,30 +5,11 @@
     behaviors {
         #include "macros.dtsi"
 
-        hm: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick_tap_ms = <175>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-
         gpipe: grave_pipe {
             compatible = "zmk,behavior-mod-morph";
             label = "grave_pipe";
             #binding-cells = <0>;
             bindings = <&kp PIPE>, <&kp GRAVE>;
-
-            mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
-        };
-
-        ppipe: pipe_pipe {
-            compatible = "zmk,behavior-mod-morph";
-            label = "pipe_pipe";
-            #binding-cells = <0>;
-            bindings = <&kp PIPE>, <&kp PIPE>;
 
             mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
         };
@@ -185,6 +166,34 @@
 
             mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
         };
+
+        left_homerow_mod: left_homerow_mod {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LEFT_HOMEROW_MOD";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            flavor = "balanced";
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <22 40 23 24 25 26 41 42 43 44 55 56 57 58 54 8 9 10 11 12>;
+        };
+
+        right_homerow_mod: right_homerow_mod {
+            compatible = "zmk,behavior-hold-tap";
+            label = "RIGHT_HOMEROW_MOD";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            flavor = "balanced";
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <1 2 3 4 5 15 16 17 18 19 29 30 31 32 33 47 48 49 50 51>;
+        };
     };
 
     keymap {
@@ -202,11 +211,11 @@
 
         real-prog-dvorak {
             bindings = <
-&gpipe     &pkp_n1             &lkp_n2         &lkp_n3         &lkp_n4           &akp_n5  &none                                                          &none      &ekp_n6  &rkp_n7            &rkp_n8          &rkp_n9          &skp_n0              &eprcnt
-&kp TAB    &kp SEMI            &kp COMMA       &kp DOT         &kp P             &kp Y    &to 0                                                          &none      &kp F    &kp G              &kp C            &kp R            &kp L                &bhash
-&kp ESC    &hm LEFT_CONTROL A  &hm LEFT_ALT O  &hm LEFT_GUI E  &hm LEFT_SHIFT U  &kp I    &none          &kp LCTRL   &kp LALT      &kp LGUI   &kp RCTRL  &none      &kp D    &hm RIGHT_SHIFT H  &hm RIGHT_GUI T  &hm RIGHT_ALT N  &hm RIGHT_CONTROL S  &kp MINUS
-&kp LSHFT  &kp APOS            &kp Q           &kp J           &kp K             &kp X                               &kp HOME      &kp PG_UP                        &kp B    &kp M              &kp W            &kp V            &kp Z                &kp RSHFT
-&none      &dtilde             &kp CAPS        &kp LEFT_ARROW  &kp RIGHT_ARROW            &kp BACKSPACE  &kp DELETE  &kp END       &kp PG_DN  &kp ENTER  &kp SPACE           &kp UP_ARROW       &kp DOWN_ARROW   &kp SLASH        &acaret              &none
+&gpipe     &pkp_n1                    &lkp_n2                   &lkp_n3                   &lkp_n4                    &akp_n5  &none                                                          &none      &ekp_n6  &rkp_n7                     &rkp_n8                    &rkp_n9                    &skp_n0                     &eprcnt
+&kp TAB    &kp SEMI                   &kp COMMA                 &kp DOT                   &kp P                      &kp Y    &to 0                                                          &none      &kp F    &kp G                       &kp C                      &kp R                      &kp L                       &bhash
+&kp ESC    &left_homerow_mod LCTRL A  &left_homerow_mod LALT O  &left_homerow_mod LGUI E  &left_homerow_mod LSHFT U  &kp I    &none          &kp LCTRL   &kp LALT      &kp LGUI   &kp RCTRL  &none      &kp D    &right_homerow_mod RSHFT H  &right_homerow_mod RGUI T  &right_homerow_mod RALT N  &right_homerow_mod RCTRL S  &kp MINUS
+&kp LSHFT  &kp APOS                   &kp Q                     &kp J                     &kp K                      &kp X                               &kp HOME      &kp PG_UP                        &kp B    &kp M                       &kp W                      &kp V                      &kp Z                       &kp RSHFT
+&none      &dtilde                    &kp CAPS                  &kp LEFT_ARROW            &kp RIGHT_ARROW                     &kp BACKSPACE  &kp DELETE  &kp END       &kp PG_DN  &kp ENTER  &kp SPACE           &kp UP_ARROW                &kp DOWN_ARROW             &kp SLASH                  &acaret                     &none
             >;
         };
     };
