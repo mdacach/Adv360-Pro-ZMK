@@ -9,6 +9,18 @@
 
 Certain ZMK features (e.g. combos) require knowing the exact key positions in the matrix. They can be found in both image and text format [here](assets/key-positions.md)
 
+### Advanced keymap note (`keymap.json` is intentionally unused)
+
+This repository treats [`config/adv360.keymap`](config/adv360.keymap) as the only source of truth.
+
+`config/keymap.json` is intentionally not maintained because it cannot reliably represent advanced ZMK features used in this keymap, including custom behavior nodes, combo definitions, include-based behavior files, and other non-trivial DTS constructs.
+
+For this reason:
+
+1. Make changes in `config/adv360.keymap` (and related `.dtsi` files) only.
+2. Do not use `config/keymap.json` for editing or round-tripping this layout.
+3. If a GUI/editor rewrites files from `keymap.json`, treat that as potentially destructive and re-verify `config/adv360.keymap` before building.
+
 ## Building the Firmware with GitHub Actions
 
 ### Setup
@@ -155,4 +167,3 @@ Further support resources can be found on Kinesis.com:
 
 In the event of a hardware issue it may be necessary to open a support ticket directly with Kinesis as opposed to a GitHub issue in this repository.
 * https://kinesis-ergo.com/support/kb360pro/#ticket
-
